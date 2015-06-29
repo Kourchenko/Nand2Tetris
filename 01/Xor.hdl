@@ -13,16 +13,17 @@ CHIP Xor {
     OUT out;
 
     PARTS:
-    //    Truth Table
     //
-    //    a   b   out
-    //    0   0    0
-    //    1   0    1
-    //    0   1    1
-    //    1   1    0
+    // Truth Table
     //
-    Nand(a=a, b=b, out=c);
-    Nand(a=c, b=a, out=d);
-    Nand(a=c, b=d, out=e);
-    Nand(a=e, b=d, out=out);
-}
+    //  a   b    out
+    //  0   0     0
+    //  1   0     1
+    //  0   1     1
+    //  1   1     0
+    Nand(a=a, b=b, out=mainout);
+    Nand(a=a, b=mainout, out=out1);
+    Nand(a=mainout, b=b, out=out2);
+    Nand(a=out1, b=out2, out=out);
+    }
+
