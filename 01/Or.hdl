@@ -27,5 +27,5 @@ CHIP Or {
     //    1   1    1
     Nand(a=a, b=a, out=outa);
     Nand(a=b, b=b, out=outb);
-    Nand(a=outa, b=outb, out=out)
+    Nand(a=outa, b=outb, out=out);
 }
