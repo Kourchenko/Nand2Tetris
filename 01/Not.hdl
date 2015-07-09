@@ -17,11 +17,20 @@ CHIP Not {
     // Nand being the first CHIP.
     //
     //
-    // Truth Table
+    //      NOT Gate Truth Table
+    //      in  out
+    //       0   0
+    //       1   0
     //
-    //  in  out
-    //  0   0
-    //  1   0
+    //      Nand Truth Table
+    //      a       b       out
+    //      0       0        1
+    //      0       1        1
+    //      1       0        1
+    //      1       1        0
+    // We notice in the Nand Table, if at least one input == 0, we return 1.
+    // Otherwise, we return 0 when input == 1.
     
     Nand(a=in, b=in, out=out);
+    
 }
