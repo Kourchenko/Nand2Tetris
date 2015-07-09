@@ -25,6 +25,6 @@ CHIP And {
     // Not(Nand) = Not(Not And) = And()
     // 
     // The idea is to get the opposite result from Nand, simply by using Not().
-    Nand(a=a, b=b, out=out);
+    Nand(a=a, b=b, out=nand);
     Not(in=nand, out=out);
 }
