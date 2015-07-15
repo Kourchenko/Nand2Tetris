@@ -14,28 +14,30 @@ CHIP Or {
     OUT out;
 
     PARTS:
-    //  OR Gate Truth Table
+    // OR Gate Truth Table
     //    a   b   out
     //    0   0    0
     //    0   1    1
     //    1   0    1
     //    1   1    1
-    //
-    // 0 0 1
-    // 0 1 1
-    // 1 0 1
-    // 1 1 0
-    // 
-    // Nand() only returns 0 if all inputs == 1.
-    // Or() returns 1 if at least 1 input == 1.
-    // Reversing it with a Not() Gate will do the trick.
+    // NAND Truth Table
+    //   a   b  out
+    //   0   0   1
+    //   0   1   1
+    //   1   0   1
+    //   1   1   0
+    
+    // If we compare NAND Truth Table against OR Truth Table
+    // We notice they have opposite OUTs.
+    // Simply reverse a = Not(a), b = Not(b)
+    // Nand(a=Not(a), b=Not(b), OUT=out)
     //
     // Not(in=a, out=nota);
     // Not(in=b, out=notb);
     // Nand(a=nota, b=notb, out=out);
     
     // Implemented using basic gates, for proof that
-    // all future gates can be built using only Nand() Gates
+    // all gates, no matter how complex, can be built using only Nand() Gates
     Nand(a=a, b=a, out=outa);
     Nand(a=b, b=b, out=outb);
     Nand(a=outa, b=outb, out=out);
