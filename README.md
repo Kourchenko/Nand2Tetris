@@ -17,7 +17,7 @@ From the Nand Gate, we can create NOT, AND, OR, XOR, MUX(Multiplexer), DMUX(Demu
 ```
 * Java
 ```java
-    public class bunnyEars2 {
+    public class LogicGates {
       public int Nand(int a, int b) {
         if (a == 1 && b == 1) {
           return 0;
