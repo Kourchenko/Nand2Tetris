@@ -9,21 +9,21 @@ From the Nand Gate, we can create NOT, AND, OR, XOR, MUX(Multiplexer), DMUX(Demu
   
 #####Nand Gate defined:
 * Python  
-  ```python
-    def nand(a, b):
-      if a==b==1:
-          return 0
-      return 1
+```python
+   def nand(a, b):
+    if a==b==1:
+      return 0
+    return 1
 
-  ```
+```
 * Java
 ```java
-public class bunnyEars2 {
+   public class bunnyEars2 {
     public int Nand(int a, int b) {
-        if (a == 1 && b == 1) {
-            return 0;
-        }
-        return 1;
+      if (a == 1 && b == 1) {
+        return 0;
+      }
+      return 1;
     }    
 }
 ```
