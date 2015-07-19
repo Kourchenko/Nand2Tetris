@@ -20,25 +20,47 @@ CHIP Or {
     //    0   1    1
     //    1   0    1
     //    1   1    1
-    // NAND Truth Table
-    //   a   b  out
-    //   0   0   1
-    //   0   1   1
-    //   1   0   1
-    //   1   1   0
+    // NAND Gate Truth Table
+    //    a   b  out
+    //    0   0   1
+    //    0   1   1
+    //    1   0   1
+    //    1   1   0
     
     // If we compare NAND Truth Table against OR Truth Table
     // We notice they have opposite OUTs.
     // Simply reverse a = Not(a), b = Not(b)
     // Nand(a=Not(a), b=Not(b), OUT=out)
     //
-    // Not(in=a, out=nota);
-    // Not(in=b, out=notb);
-    // Nand(a=nota, b=notb, out=out);
+    Not(in=a, out=nota);
+    Not(in=b, out=notb);
+    Nand(a=nota, b=notb, out=out);
     
     // Implemented using basic gates, for proof that
     // all gates, no matter how complex, can be built using only Nand() Gates
-    Nand(a=a, b=a, out=outa);
-    Nand(a=b, b=b, out=outb);
-    Nand(a=outa, b=outb, out=out);
+    // Nand Truth Table
+    //  a  b  out
+    //  0  0   1
+    //  0  1   1
+    //  1  0   1
+    //  1  1   0
+    //
+    // Or Truth Table
+    //  a  b  out
+    //  0  0   0
+    //  0  1   1
+    //  1  0   1
+    //  1  1   1
+    //  
+    //  The first input of NAND and OR are opposites.
+    //  The solution lies in getting the opposites of each input.
+    //
+    //  For example,
+    //  An input of "00", where "a=0" and "b=0".
+    //  a=a, b=a -> 00 -> out=1
+    //  a=b, b=b -> 00 -> out=1
+    //  a=1, b=1 -> 11 -> out=0
+    // Nand(a=a, b=a, out=aa);
+    // Nand(a=b, b=b, out=bb);
+    // Nand(a=aa, b=bb, out=out);
 }
