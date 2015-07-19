@@ -48,7 +48,7 @@ CHIP DMux {
     // get the correct output for each "a" and each "b".
     
     Not(in=sel, out=selInv);
-    And(a=sel, b=in, out=a);
-    And(a=selInv, b=in, out=b);
+    And(a=in, b=selInv, out=a);
+    And(a=in, b=sel, out=b);
     
 }
