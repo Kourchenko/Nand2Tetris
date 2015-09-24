@@ -1,0 +1,54 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/01/DMux.hdl
+
+/**
+ * Demultiplexor:
+ * {a, b} = {in, 0} if sel == 0
+ *          {0, in} if sel == 1
+ */
+
+CHIP DMux {
+    IN in, sel;
+    OUT a, b;
+
+    PARTS:
+    // AND TRUTH TABLE
+    //
+    //  a   b   out
+    //
+    //  0   0    0
+    //  0   1    0
+    //  1   0    0
+    //  1   1    1
+    
+    // If sel=0, then return {in, 0}.
+    // AND TRUTH TABLE gives us some 
+    // insight, if we assume that if we input "sel" into the "b" pin,
+    // we receive the correct output, because "sel" can be either 0 or 1,
+    // while the second part of {in, 0} has to remain 0, and the "in" part
+    // of it can be anything
+    //
+    // Ergo, if sel=0, then assume you're inputing "sel" into the pin "b"
+    // in the And truth table.
+    // You can assume that in="a", and out=0 (out will always be 0) {in, 0}
+    // sel=0, in=0, 0 {in,
+    // sel=0, in=1, 0 0}
+    // This holds for when sel=0.
+    
+    // If sel=1 then return {0, in}
+    // sel=1, in=0, out=0 {0,
+    // sel=1, in=1, out=1 in}
+    // This holds for when sel=1.
+    
+    // Considering when sel=0 {in, 0} and when
+    // sel=1 {0, in} are opposites, we need to
+    // check take the inverse of each "sel", to
+    // get the correct output for each "a" and each "b".
+    
+    Not(in=sel, out=selInv);
+    And(a=in, b=selInv, out=a);
+    And(a=in, b=sel, out=b);
+    
+}

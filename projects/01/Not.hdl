@@ -1,0 +1,36 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/01/Not.hdl
+
+/**
+ * Not gate:
+ * out = not in
+ */
+
+CHIP Not {
+    IN in;
+    OUT out;
+
+    PARTS:
+    // Using pervious CHIPs to build other CHIPs.
+    // Nand being the first CHIP.
+    //
+    //
+    //      NOT Gate Truth Table
+    //      in  out
+    //       0   0
+    //       1   0
+    //
+    //      Nand Truth Table
+    //      a       b       out
+    //      0       0        1
+    //      0       1        1
+    //      1       0        1
+    //      1       1        0
+    // We notice in the Nand Table, if at least one input == 0, we return 1.
+    // Otherwise, we return 0 when input == 1.
+    
+    Nand(a=in, b=in, out=out);
+    
+}
