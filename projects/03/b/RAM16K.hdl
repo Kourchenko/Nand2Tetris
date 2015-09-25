@@ -30,7 +30,7 @@ CHIP RAM16K {
     RAM4K(in=in, load=load7, address=address[2..13], out=out7);
     RAM4K(in=in, load=load8, address=address[2..13], out=out8);
 
-    // Specify into which RAM512 to write.
+    // Specify into which RAM4K to write.
     DMux8Way(in=load, sel=address[0..2],
               a=load1, b=load2, c=load3, d=load4,
               e=load5, f=load6, g=load7, h=load8);
