@@ -17,7 +17,6 @@ CHIP RAM512 {
     PARTS:
     // Put your code here:
 
-    // Double the storage space from RAM8.
     // RAM64 has 6 addresses to write to,
     // so we just give it's input 6 addresses.
     RAM64(in=in, load=load1, address=address[3..8], out=out1);
