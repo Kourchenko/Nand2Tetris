@@ -1,0 +1,12 @@
+/*
+*
+* The results should be as follows, 
+* given inputs a and b the output is out.
+*
+*/
+
+|   a   |   b   |  out  |
+|   0   |   0   |   0   |
+|   0   |   1   |   0   |
+|   1   |   0   |   0   |
+|   1   |   1   |   1   |
