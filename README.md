@@ -1,5 +1,5 @@
 # Nand2Tetris
-##### Source for project: [Nand2Tetris by Noam Nisan and Shimon Schocken](www.nand2tetris.org)
+##### Source for project: [Nand2Tetris by Noam Nisan and Shimon Schocken](http://www.nand2tetris.org/)
 
 
 ###Building a modern computer.
