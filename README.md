@@ -4,12 +4,12 @@ Logic Gates for Toy-Compiler: JackCompiler
 ##### Source for project: [Nand2Tetris by Noam Nisan and Shimon Schocken](http://www.nand2tetris.org/)
 
 
-###Building a modern computer.
+### Building a modern computer.
 
 The basis of this project is the Nand Gate, which returns 0 if and only if all inputs are equal to 1. 
 From the Nand Gate, we can create NOT, AND, OR, XOR, MUX(Multiplexer), DMUX(Demultiplexer), and various other logic gates. Understanding logic gates helps us create computers and programs.
   
-#####Nand Gate defined:
+##### Nand Gate defined:
 * Python  
 ```python
     def nand(a, b):
